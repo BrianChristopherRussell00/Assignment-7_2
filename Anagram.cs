@@ -30,5 +30,28 @@ namespace Assignment_7_2
             }
             return false;
         }
+        public static bool areAnagrams(string word1, string word2)
+        {
+            Dictionary<char, int> charCount = new Dictionary<char, int>();
+            foreach (char c in word1)
+            {
+                charCount[c] = charCount.GetValueOrDefault(c, 0) + 1;
+                foreach (char c2 in word2)
+                {
+                    charCount[c] = charCount.GetValueOrDefault(c, 0) - 1;
+
+                }
+                foreach (var pair in charCount)
+                {
+                    if (pair.Value != 0)
+                    {
+                        return false;
+                    }
+                    return true;
+                }
+                return false;
+            }
+            return true;
+        }
     }
 }

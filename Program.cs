@@ -9,19 +9,19 @@ namespace Assignment_7_2
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Please enter an array of your choice using numbers followed by a space between each:");//Assignment 7.2 Part 1
-            string userInput = Console.ReadLine();
-            string[] userArray = userInput.Split(' ');
-            int[] inputArray = userArray.Select(int.Parse).ToArray();
-
-            //Display original array
-            Console.WriteLine($"Your original array is: [{string.Join(", ", inputArray)}]");
-
-            //Calling the Sort method
-            SortingNumbers.Sort(inputArray);
-
-            //Display new sorted array
-            Console.WriteLine($"Your sorted array is: [{string.Join(", ", inputArray)}]");
+           ///Console.WriteLine("Please enter an array of your choice using numbers followed by a space between each:");//Assignment 7.2 Part 1
+           ///string userInput = Console.ReadLine();
+           ///string[] userArray = userInput.Split(' ');
+           ///int[] inputArray = userArray.Select(int.Parse).ToArray();
+           ///
+           /////Display original array
+           ///Console.WriteLine($"Your original array is: [{string.Join(", ", inputArray)}]");
+           ///
+           /////Calling the Sort method
+           ///SortingNumbers.Sort(inputArray);
+           ///
+           /////Display new sorted array
+           ///Console.WriteLine($"Your sorted array is: [{string.Join(", ", inputArray)}]");
 
 
 
