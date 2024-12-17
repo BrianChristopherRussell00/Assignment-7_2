@@ -9,33 +9,30 @@ namespace Assignment_7_2
 
         static void Main(string[] args)
         {
-            Console.WriteLine("How many numbers are you including?");
-            int answer = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; i < answer; i++)
-            {
+            Console.WriteLine("Please enter an array of your choice using numbers followed by a space between each:");//Assignment 7.2 Part 1
+            string userInput = Console.ReadLine();
+            string[] userArray = userInput.Split(' ');
+            int[] inputArray = userArray.Select(int.Parse).ToArray();
 
-                Console.WriteLine("Enter array numbers: ");
-                string arr = Console.ReadLine();
-                int[] newarr = Array.ConvertAll(arr.Split(','), int.Parse);
-            }
+            //Display original array
+            Console.WriteLine($"Your original array is: [{string.Join(", ", inputArray)}]");
+
+            //Calling the Sort method
+            SortingNumbers.Sort(inputArray);
+
+            //Display new sorted array
+            Console.WriteLine($"Your sorted array is: [{string.Join(", ", inputArray)}]");
 
 
-            Console.Write("Array before sorting :\n");
-            PrintArray.printArrays(newarr, answer);
 
 
-            PrintArray.sort(newarr, answer);
+            // string input1 = "hello"; //Assignment 7.2 Part 2
+            //  string output1 = FindVowels.ReverseVowels(input1);
+            // Console.WriteLine($"Input : {input1}\nOutput: {output1}");
 
-            Console.Write("Array after sorting :\n");
-            PrintArray.printArrays(newarr, answer);                //Assignment 7.2 Part 1
-
-            string input1 = "hello"; //Assignment 7.2 Part 2
-            string output1 = FindVowels.ReverseVowels(input1);
-            Console.WriteLine($"Input : {input1}\nOutput: {output1}");
-
-            string input2 = "avacado";
-            string output2 = FindVowels.ReverseVowels(input2);
-            Console.WriteLine($"Input : {input2}\nOutput: {output2}");
+            //     string input2 = "avacado";
+            //    string output2 = FindVowels.ReverseVowels(input2);
+            //   Console.WriteLine($"Input : {input2}\nOutput: {output2}");
 
 
 
@@ -43,7 +40,7 @@ namespace Assignment_7_2
 
             string string1 = "anagram";   // Assignment 7.2 Part 3
             string string2 = "nagaram";
-            Console.WriteLine($"{string1} and {string2} {Anagram.isAnagram(string1,string2)}");
+            Console.WriteLine($"{string1} and {string2} {Anagram.isAnagram(string1, string2)}");
         }
     }
 }
